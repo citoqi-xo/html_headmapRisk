@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+
+<Style>
+    body {
+        padding: 25px;
+    }
+
+    .title {
+        color: #5C6AC4;
+    }
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 0.15em;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    .VH {
+        background-color: #f90909;
+        width: 110px;
+        height: 110px;
+        font-weight: 550 !important;
+        overflow: auto;
+    }
+
+    .H {
+        background-color: #f99d09;
+        width: 110px;
+        height: 110px;
+        font-weight: 550 !important;
+    }
+
+    .M {
+        background-color: #f9d909;
+        width: 110px;
+        height: 110px;
+        font-weight: 550 !important;
+    }
+
+    .L {
+        background-color: #4c7c04;
+        width: 110px;
+        height: 110px;
+        font-weight: 550 !important;
+    }
+
+    #rMatrix>tbody>tr>td,
+    #rMatrix>tbody>tr>th,
+    #rMatrix>tfoot>tr>td,
+    #rMatrix>tfoot>tr>th,
+    #rMatrix>thead>tr>td,
+    #rMatrix>thead>tr>th {
+        vertical-align: middle;
+        text-align: center;
+        font-weight: 550;
+    }
+
+    .rectangle {
+        width: 110px;
+        height: 110px;
+        padding: 3px;
+        text-align: left;
+        overflow: auto;
+        display: inline-block;
+    }
+
+
+    .dot {
+        margin: 1px;
+        height: 20px;
+        width: 20px;
+        line-height: 20px;
+        background-color: #e6e6e6;
+        border-radius: 50%;
+        align-items: center;
+        text-align: center;
+        font-size: 0.5em;
+        display: inline-block;
+
+        border: 1px solid #474747;
+    }
+
+    .dot-txt {
+
+        text-align: center;
+    }
+</Style>
+
+<script>
+    function showTime() {
+        document.getElementById('currentTime').innerHTML = new Date().toUTCString();
+    }
+    showTime();
+    setInterval(function () {
+        showTime();
+    }, 1000);
+    $(function () {
+        var rowIndex = getQueryStrings().L;
+        var columnIndex = getQueryStrings().S;
+        try {
+            if (rowIndex != undefined && columnIndex != undefined) {
+                var column = $('#rMatrix tbody td[s=' + columnIndex + ']').index();
+                var cell = $('#rMatrix tbody tr[lh=' + rowIndex + ']').find('td').eq(column);
+                $(cell).css('border', '3px solid');
+                $(cell).css('box-shadow',
+                    '-5px 5px 20px 20px rgba(14, 1, 1, 0.17), -15px -11px 20px 5px rgba(14, 14, 14, 0.22)');
+                $(cell).css('border-style', 'dashed');
+            }
+        } catch (ex) {}
+    });
+
+    function getQueryStrings() {
+        var assoc = {};
+        var decode = function (s) {
+            return decodeURIComponent(s.replace(/\+/g, " "));
+        };
+        var queryString = location.search.substring(1);
+        var keyValues = queryString.split('&');
+        for (var i in keyValues) {
+            var key = keyValues[i].split('=');
+            if (key.length > 1) {
+                assoc[decode(key[0])] = decode(key[1]);
+            }
+        }
+        return assoc;
+    }
+</script>
+
+
+<head>
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <table class="table table-bordered table-responsive" id="rMatrix">
+        <thead>
+
+        </thead>
+        <tbody>
+            <tr lh="5">
+                <td rowspan="5" class="r-header" 
+                    style="text-align:center;
+                            writing-mode: vertical-rl;
+                            text-orientation: upright;
+                            padding: 15px;
+                            font-weight: 550 !important;">
+                    I M P A C T
+                </td>
+                <td style="border: 1px solid black; padding: 5px;">
+                    Catastrophic
+                </td>
+                <td class="H">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+                <td class="H">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+                <td class="VH">
+                    <div class="rectangle">
+                        <span class="dot">
+                            9999
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                        <span class="dot">
+                            100
+                        </span>
+                    </div>
+                </td>
+                <td class="VH">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+                <td class="VH">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+            </tr>
+            <tr lh="4">
+
+                <td style="border: 1px solid black;">
+                    Major
+                </td>
+                <td class="M">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+                <td class="H">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+                <td class="H">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+                <td class="VH">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+                <td class="VH">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+            </tr>
+            <tr lh="3">
+
+                <td style="border: 1px solid black;">
+                   Moderate
+                </td>
+                <td class="M">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+                <td class="M">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+                <td class="H">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+                <td class="H">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+                <td class="H">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+            </tr>
+            <tr lh="2">
+
+                <td style="border: 1px solid black;">
+                    Minor
+                </td>
+                <td class="L">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+                <td class="L">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+                <td class="M">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+                <td class="M">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+                <td class="H">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+            </tr>
+            <tr>
+
+                <td style="border: 1px solid black;">
+                    Insignificant
+                </td>
+                <td class="L">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+                <td class="L">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+                <td class="L">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+                <td class="M">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+                <td class="M">
+                    <div class="rectangle">
+
+                    </div>
+                </td>
+            </tr>
+            <tr>
+
+                <td colspan="2" class="r-header">
+
+                </td>
+                <td style="border: 1px solid black;">
+                    Near Miss
+                </td>
+                <td style="border: 1px solid black;">
+                    Minor Injury
+                </td>
+                <td style="border: 1px solid black;">
+                    Lost Time Accident
+                </td>
+                <td style="border: 1px solid black;">
+                    Major Injury
+                </td>
+                <td style="border: 1px solid black;">
+                    Fatality
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8" class="r-header"
+                    style="font-weight: 550 !important;
+                           padding: 15px; " >
+                    L I K E L I H O O D
+                </td>
+            </tr>
+            
+
+        </tbody>
+    </table>
+</body>
+
+</html>
